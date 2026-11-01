@@ -1,0 +1,87 @@
+<div class="site-shell" id="topo">
+  <header class="site-header section-wrap">
+    <a class="brand" href="#topo" (click)="closeMenu()" aria-label="Ir para o início"><span class="brand-mark">m<span>.</span></span><span class="brand-name">{{ profile.name }}<small>portfólio criativo</small></span></a>
+    <button class="menu-toggle" type="button" [attr.aria-expanded]="menuOpen" aria-controls="site-nav" aria-label="Abrir ou fechar menu" (click)="menuOpen = !menuOpen"><span></span><span></span></button>
+    <nav class="site-nav" id="site-nav" [class.open]="menuOpen" aria-label="Navegação principal"><a href="#projetos" (click)="closeMenu()">Projetos</a><a href="#design" (click)="closeMenu()">Design</a><a href="#habilidades" (click)="closeMenu()">Habilidades</a><a href="#sobre" (click)="closeMenu()">Sobre</a><a class="nav-contact" href="#contato" (click)="closeMenu()">Vamos conversar <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main>
+    <section class="hero section-wrap" aria-labelledby="hero-title">
+      <div class="hero-copy"><p class="eyebrow"><span class="eyebrow-line"></span> Portfólio / 2026</p><h1 id="hero-title">Ideias que viram <em>experiências.</em></h1><p class="hero-intro">{{ profile.intro }}</p><div class="hero-actions"><a class="button button-primary" href="#projetos">Explorar projetos <span aria-hidden="true">↗</span></a><a class="text-link" href="#sobre">Conheça meu trabalho <span aria-hidden="true">↗</span></a></div><div class="hero-index"><span>01 / 06</span><span>Role para explorar ↓</span></div></div>
+      <div class="hero-art" aria-label="Composição ilustrativa de interfaces e design"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="hero-card hero-card-back"><div class="mini-label">DESIGN / DIGITAL</div><div class="hero-card-symbol">✳</div><div class="mini-foot">forma & função <span>↗</span></div></div><div class="hero-card hero-card-front"><div class="mock-browser"><i></i><i></i><i></i><span>projeto em destaque</span></div><div class="hero-card-grid"><span>WEB</span><strong>Criação<br>com propósito<span>.</span></strong><small>Interface · Design · Conteúdo</small></div></div><div class="round-stamp">IDEIAS · DESIGN · CÓDIGO ·</div></div>
+    </section>
+    <div class="marquee" aria-hidden="true"><div>DESENVOLVIMENTO WEB <span>✳</span> DESIGN GRÁFICO <span>✳</span> CRIAÇÃO DE CONTEÚDO <span>✳</span> DESENVOLVIMENTO WEB <span>✳</span> DESIGN GRÁFICO <span>✳</span></div></div>
+    <section class="section-wrap section-block" id="projetos" aria-labelledby="projects-title"><div class="section-heading"><div><p class="eyebrow">01 / Projetos selecionados</p><h2 id="projects-title">Da ideia à <em>tela.</em></h2></div><p>Dois projetos digitais que desenvolvi. Explore as interfaces e conheça cada aplicação em funcionamento.</p></div><div class="project-grid">
+      @for (project of projects; track project.name) {
+        <article class="project-card" [class.navalidade]="project.theme === 'navalidade'" [class.odontogest]="project.theme === 'odontogest'">
+          <div class="project-visual"><div class="project-preview project-preview-image"><img [src]="project.image" [alt]="'Captura de tela do ' + project.name" loading="lazy" /></div></div>
+          <div class="project-meta"><span>{{ project.number }} / {{ project.category }}</span><span aria-hidden="true">↗</span></div>
+          <h3>{{ project.name }}</h3>
+          <div class="project-story">
+            <div><span>O ponto de partida</span><p>{{ project.description }}</p></div>
+            <div><span>A solução</span><p>{{ project.solution }}</p></div>
+          </div>
+          <div class="project-bottom"><div class="tags">@for (tag of project.tags; track tag) { <span>{{ tag }}</span> }</div>@if (project.url) { <a [href]="project.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'Visitar ' + project.name">Visitar projeto ↗</a> } @else { <span class="pending-link">Link em breve</span> }</div>
+        </article>
+      }
+    </div></section>
+    <section class="design-section" id="design" aria-labelledby="design-title">
+      <div class="section-wrap section-block">
+        <div class="section-heading"><div><p class="eyebrow">02 / Explorações visuais</p><h2 id="design-title">Design que <em>comunica.</em></h2></div><p>Uma seleção de peças que criei para marcas e redes sociais, explorando linguagem visual, composição e comunicação.</p></div>
+        <div class="art-grid">
+          @for (art of artworks; track art.number) {
+            <article class="art-card" [class.art-featured]="art.number === '01'">
+              @if (art.image) {
+                <a class="art-surface" [class]="'art-surface art-' + art.number" [href]="art.image" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'Ver arte completa: ' + art.title">
+                  <span class="art-visual-index">ARTE / {{ art.number }}</span>
+                  <img [src]="art.image" [alt]="art.title" loading="lazy" />
+                  @if (art.number === '01') { <span class="art-feature-copy"><small>EM DESTAQUE</small><strong>Design que prende o olhar.</strong><small>Peças para redes sociais</small></span> }
+                  <span class="art-view-icon" aria-hidden="true">↗</span>
+                </a>
+              } @else {
+                <div class="art-surface" [class]="'art-surface art-' + art.number"><div class="art-placeholder" aria-label="Espaço reservado para imagem"><span class="art-corner">{{ art.number }}</span><span class="art-shape" aria-hidden="true"></span><span class="art-place-label">INSIRA SUA ARTE <span>↗</span></span></div></div>
+              }
+              <div class="art-caption"><div><h3>{{ art.title }}</h3><p>{{ art.format }}</p></div><span>0{{ $index + 1 }} / 04</span></div>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+    <section class="content-section section-wrap section-block" id="conteudo" aria-labelledby="content-title"><div class="content-heading"><p class="eyebrow">03 / Criação de conteúdo</p><h2 id="content-title">Uma boa ideia merece <em>uma boa história.</em></h2><p>Conteúdo vai além de publicar: começa na intenção, ganha forma na mensagem e encontra as pessoas certas.</p></div><div class="content-list">@for (item of contentSkills; track item.number) { <article><span>{{ item.number }}</span><div><h3>{{ item.title }}</h3><p>{{ item.text }}</p></div><span class="list-arrow" aria-hidden="true">↗</span></article> }</div></section>
+    <section class="skills-section" id="habilidades" aria-labelledby="skills-title">
+      <div class="section-wrap section-block">
+        <div class="section-heading skills-heading"><div><p class="eyebrow">04 / Habilidades</p><h2 id="skills-title">O que eu sei <em>fazer.</em></h2></div><p>Desenvolvimento, vídeo e artes se encontram no meu trabalho. Clique em uma área para explorar ferramentas e linguagens.</p></div>
+        <div class="skill-area-grid">
+          @for (area of skillAreas; track area.id) {
+            <article class="skill-area" [class.expanded]="selectedSkill === area.id">
+              <button class="skill-area-button" type="button" [attr.aria-expanded]="selectedSkill === area.id" [attr.aria-controls]="selectedSkill === area.id ? 'skill-panel-' + area.id : null" (click)="toggleSkill(area.id)">
+                <span class="skill-area-top"><span>{{ area.number }} / ESPECIALIDADE</span><span class="skill-expand-icon" aria-hidden="true">{{ selectedSkill === area.id ? '−' : '+' }}</span></span>
+                <span class="skill-icon" aria-hidden="true">
+                  @switch (area.id) {
+                    @case ('sites') { <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="38" height="27" rx="3"/><path d="M5 16h38M18 41h12M24 35v6M11 12h.1M16 12h.1"/></svg> }
+                    @case ('video') { <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="38" height="27" rx="4"/><path d="m20 18 11 6-11 6V18ZM12 6h24"/></svg> }
+                    @case ('artes') { <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M31 7 11 27l-4 14 14-4L41 17 31 7ZM27 11l10 10M11 27l10 10M7 41l8-8"/></svg> }
+                  }
+                </span>
+                <span class="skill-area-title">{{ area.title }}</span>
+                <span class="skill-area-summary">{{ area.summary }}</span>
+                <span class="skill-area-level"><strong>{{ area.level }}%</strong><span class="skill-main-track"><span [style.width.%]="area.level"></span></span></span>
+                <span class="skill-area-hint">{{ selectedSkill === area.id ? 'Recolher detalhes' : 'Ver ferramentas e linguagens' }} <span aria-hidden="true">↗</span></span>
+              </button>
+              @if (selectedSkill === area.id) {
+                <div class="skill-details" [id]="'skill-panel-' + area.id">
+                  @for (tool of area.tools; track tool.name) {
+                    <div class="skill-tool"><div class="skill-tool-label"><span>{{ tool.name }}</span><strong>{{ tool.level }}%</strong></div><div class="skill-tool-track" role="progressbar" [attr.aria-label]="tool.name" [attr.aria-valuenow]="tool.level" aria-valuemin="0" aria-valuemax="100"><span [style.width.%]="tool.level"></span></div></div>
+                  }
+                </div>
+              }
+            </article>
+          }
+        </div>
+        <p class="skills-note">Percentuais de autoavaliação que evoluem com novos projetos e aprendizados.</p>
+      </div>
+    </section>
+    <section class="about-section" id="sobre" aria-labelledby="about-title"><div class="section-wrap about-grid"><div><p class="eyebrow">05 / Sobre mim</p><h2 id="about-title">Criatividade para <em>conectar pontos.</em></h2><div class="about-monogram" aria-hidden="true">m<span>.</span></div></div><div class="about-copy"><span class="about-asterisk">✳</span><p>{{ profile.about }}</p><p>{{ profile.journey }}</p><div class="about-location"><span>Localização</span><strong>{{ profile.location }}</strong></div><h3>Ferramentas & habilidades</h3><div class="skill-list">@for (skill of skills; track skill) { <span>{{ skill }}</span> }</div></div></div></section>
+    <section class="contact-section section-wrap section-block" id="contato" aria-labelledby="contact-title"><p class="eyebrow">06 / Contato</p><div class="contact-grid"><div><h2 id="contact-title">Tem uma ideia?<br><em>Vamos criar juntos.</em></h2><p>Projetos, colaborações ou apenas uma conversa. Este é o espaço para começar.</p></div><div class="contact-action">@if (profile.email) { <a class="contact-email" [href]="'mailto:' + profile.email">{{ profile.email }} <span aria-hidden="true">↗</span></a> } @else { <div class="contact-placeholder">Adicione seu e-mail em <code>src/app/app.ts</code> para ativar o contato. <span aria-hidden="true">↗</span></div> }<div class="social-links">@if (profile.linkedin) { <a [href]="profile.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a> } @else { <span>LinkedIn · link pendente</span> }@if (profile.instagram) { <a [href]="profile.instagram" target="_blank" rel="noopener noreferrer">Instagram ↗</a> } @else { <span>Instagram · link pendente</span> }</div></div></div></section>
+  </main>
+  <footer class="site-footer section-wrap"><span>© 2026 {{ profile.name }}. Feito com intenção.</span><a href="#topo">Voltar ao topo ↑</a></footer>
+</div>
