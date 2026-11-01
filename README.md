@@ -15,6 +15,8 @@ Abra `http://localhost:4200/`. Para validar a versão de produção, execute `np
 
 O workflow em `.github/workflows/pages.yml` publica automaticamente no GitHub Pages após alterações na branch `main`, em `https://matheusbecker00.github.io/Portifolio/`.
 
+O arquivo `vercel.json` configura o build estático para a Vercel. Após importar este repositório na Vercel, novos commits em `main` também serão publicados lá.
+
 ## Personalizar
 
 Edite `src/app/app.ts`:
