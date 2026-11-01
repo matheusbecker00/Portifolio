@@ -26,6 +26,7 @@ Edite `src/app/app.ts`:
 - `artworks`: títulos, formatos e imagens da galeria. Quatro peças da pasta `D:\- PORTIFOLIO` foram copiadas para `public/artes/`; novos arquivos podem ser adicionados ali e referenciados com `artes/nome-do-arquivo.png`.
 - `contentSkills` e `skills`: serviços e habilidades.
 - `skillAreas`: percentuais de autoavaliação das três áreas e domínio de cada ferramenta ou linguagem. Clique nos cartões da seção Habilidades para abrir as barras detalhadas.
+- `public/curriculo-matheus-becker.pdf`: currículo aberto pelo link no menu superior, ao lado de Sobre.
 
 Atualize também o título e a descrição em `src/index.html` e, se desejar, as cores em `src/styles.scss`.
 

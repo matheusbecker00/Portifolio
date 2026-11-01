@@ -29,6 +29,7 @@ describe('App', () => {
     expect(compiled.querySelectorAll('#design a[aria-label^="Ver arte completa:"]').length).toBe(4);
     expect(compiled.querySelector('#design .art-featured')).toBeTruthy();
     expect(compiled.querySelector('#sobre')?.textContent).toContain('Riomaframix');
+    expect(compiled.querySelector('.site-nav a[href="curriculo-matheus-becker.pdf"]')).toBeTruthy();
     expect(compiled.querySelectorAll('#habilidades .skill-area').length).toBe(3);
     expect(compiled.querySelector('#contato')).toBeTruthy();
     expect(compiled.querySelector('#contato .contact-email')?.getAttribute('href')).toBe('mailto:matheusbecker484@gmail.com');

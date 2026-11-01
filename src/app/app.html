@@ -2,7 +2,7 @@
   <header class="site-header section-wrap">
     <a class="brand" href="#topo" (click)="closeMenu()" aria-label="Ir para o início"><span class="brand-mark">m<span>.</span></span><span class="brand-name">{{ profile.name }}<small>portfólio criativo</small></span></a>
     <button class="menu-toggle" type="button" [attr.aria-expanded]="menuOpen" aria-controls="site-nav" aria-label="Abrir ou fechar menu" (click)="menuOpen = !menuOpen"><span></span><span></span></button>
-    <nav class="site-nav" id="site-nav" [class.open]="menuOpen" aria-label="Navegação principal"><a href="#projetos" (click)="closeMenu()">Projetos</a><a href="#design" (click)="closeMenu()">Design</a><a href="#habilidades" (click)="closeMenu()">Habilidades</a><a href="#sobre" (click)="closeMenu()">Sobre</a><a class="nav-contact" href="#contato" (click)="closeMenu()">Vamos conversar <span aria-hidden="true">↗</span></a></nav>
+    <nav class="site-nav" id="site-nav" [class.open]="menuOpen" aria-label="Navegação principal"><a href="#projetos" (click)="closeMenu()">Projetos</a><a href="#design" (click)="closeMenu()">Design</a><a href="#habilidades" (click)="closeMenu()">Habilidades</a><a href="#sobre" (click)="closeMenu()">Sobre</a><a href="curriculo-matheus-becker.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir currículo de Matheus Becker em PDF, em nova guia" (click)="closeMenu()">Currículo ↗</a><a class="nav-contact" href="#contato" (click)="closeMenu()">Vamos conversar <span aria-hidden="true">↗</span></a></nav>
   </header>
   <main>
     <section class="hero section-wrap" aria-labelledby="hero-title">
