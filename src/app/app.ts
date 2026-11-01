@@ -16,9 +16,11 @@ export class App {
     about: 'Minha trajetória começou aos 17 anos, como estagiário no Riomaframix. Eu publicava materiais de clientes e, após ser efetivado, passei a criar peças e captar vídeos. Foi nesse período que desenvolvi minhas habilidades com Photoshop, CapCut e OBS Studio.',
     journey: 'Depois, assumi o marketing da Odonto Company e também realizei projetos como freelancer. O interesse por entender como as coisas funcionam me levou à Engenharia de Software, curso que faço atualmente. Hoje reúno essa experiência criativa e técnica no desenvolvimento de sites e aplicativos, incluindo OdontoGest e NaValidade.',
     location: 'Rio Negro, Paraná',
-    email: null as string | null,
-    linkedin: null as string | null,
-    instagram: null as string | null,
+    email: 'matheusbecker484@gmail.com',
+    phone: '47 98421-6946',
+    whatsapp: 'https://wa.me/5547984216946',
+    linkedin: 'https://www.linkedin.com/in/matheus-becker-759692324/',
+    instagram: 'https://www.instagram.com/_xbecker',
   };
 
   readonly projects = [

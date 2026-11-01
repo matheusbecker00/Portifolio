@@ -19,7 +19,7 @@ O workflow em `.github/workflows/pages.yml` publica automaticamente no GitHub Pa
 
 Edite `src/app/app.ts`:
 
-- `profile`: apresentação de Matheus, trajetória, localização, e-mail e redes sociais. Enquanto e-mail e links estiverem como `null`, a página mostra avisos explícitos no lugar de links fictícios.
+- `profile`: apresentação de Matheus, trajetória, localização, e-mail, WhatsApp e redes sociais. Mantenha o número exibido e a URL `wa.me` em sincronia ao editar o telefone.
 - `projects`: descrições, etiquetas, URLs e capturas de NaValidade e OdontoGest. As imagens enviadas estão em `public/projetos/`.
 - `artworks`: títulos, formatos e imagens da galeria. Quatro peças da pasta `D:\- PORTIFOLIO` foram copiadas para `public/artes/`; novos arquivos podem ser adicionados ali e referenciados com `artes/nome-do-arquivo.png`.
 - `contentSkills` e `skills`: serviços e habilidades.

@@ -81,7 +81,17 @@
       </div>
     </section>
     <section class="about-section" id="sobre" aria-labelledby="about-title"><div class="section-wrap about-grid"><div><p class="eyebrow">05 / Sobre mim</p><h2 id="about-title">Criatividade para <em>conectar pontos.</em></h2><div class="about-monogram" aria-hidden="true">m<span>.</span></div></div><div class="about-copy"><span class="about-asterisk">✳</span><p>{{ profile.about }}</p><p>{{ profile.journey }}</p><div class="about-location"><span>Localização</span><strong>{{ profile.location }}</strong></div><h3>Ferramentas & habilidades</h3><div class="skill-list">@for (skill of skills; track skill) { <span>{{ skill }}</span> }</div></div></div></section>
-    <section class="contact-section section-wrap section-block" id="contato" aria-labelledby="contact-title"><p class="eyebrow">06 / Contato</p><div class="contact-grid"><div><h2 id="contact-title">Tem uma ideia?<br><em>Vamos criar juntos.</em></h2><p>Projetos, colaborações ou apenas uma conversa. Este é o espaço para começar.</p></div><div class="contact-action">@if (profile.email) { <a class="contact-email" [href]="'mailto:' + profile.email">{{ profile.email }} <span aria-hidden="true">↗</span></a> } @else { <div class="contact-placeholder">Adicione seu e-mail em <code>src/app/app.ts</code> para ativar o contato. <span aria-hidden="true">↗</span></div> }<div class="social-links">@if (profile.linkedin) { <a [href]="profile.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a> } @else { <span>LinkedIn · link pendente</span> }@if (profile.instagram) { <a [href]="profile.instagram" target="_blank" rel="noopener noreferrer">Instagram ↗</a> } @else { <span>Instagram · link pendente</span> }</div></div></div></section>
+    <section class="contact-section section-wrap section-block" id="contato" aria-labelledby="contact-title">
+      <p class="eyebrow">06 / Contato</p>
+      <div class="contact-grid">
+        <div><h2 id="contact-title">Tem uma ideia?<br><em>Vamos criar juntos.</em></h2><p>Projetos, colaborações ou apenas uma conversa. Este é o espaço para começar.</p></div>
+        <div class="contact-action">
+          <a class="contact-email" [href]="'mailto:' + profile.email">{{ profile.email }} <span aria-hidden="true">↗</span></a>
+          <a class="contact-whatsapp" [href]="profile.whatsapp" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'Conversar pelo WhatsApp no número ' + profile.phone"><span>Conversar pelo WhatsApp <strong>{{ profile.phone }}</strong></span><span aria-hidden="true">↗</span></a>
+          <div class="social-links"><a [href]="profile.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a [href]="profile.instagram" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="site-footer section-wrap"><span>© 2026 {{ profile.name }}. Feito com intenção.</span><a href="#topo">Voltar ao topo ↑</a></footer>
 </div>

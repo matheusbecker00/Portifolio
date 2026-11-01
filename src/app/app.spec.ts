@@ -31,6 +31,9 @@ describe('App', () => {
     expect(compiled.querySelector('#sobre')?.textContent).toContain('Riomaframix');
     expect(compiled.querySelectorAll('#habilidades .skill-area').length).toBe(3);
     expect(compiled.querySelector('#contato')).toBeTruthy();
+    expect(compiled.querySelector('#contato .contact-email')?.getAttribute('href')).toBe('mailto:matheusbecker484@gmail.com');
+    expect(compiled.querySelector('#contato .contact-whatsapp')?.getAttribute('href')).toBe('https://wa.me/5547984216946');
+    expect(compiled.querySelector('#contato a[href="https://www.instagram.com/_xbecker"]')).toBeTruthy();
   });
 
   it('should expand and collapse skill details', async () => {
