@@ -24,3 +24,19 @@
 
 .contact-whatsapp{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:22px;padding:17px 21px;border-radius:14px;background:#b7eb62;color:#17231c;font-size:13px;font-weight:700}.contact-whatsapp strong{display:block;font-size:17px;letter-spacing:-.02em;margin-top:3px}.contact-whatsapp>span:last-child{font-size:23px;font-weight:400}.contact-whatsapp:hover{background:#d1ff88;transform:translateY(-3px)}
 @media(max-width:700px){.contact-whatsapp{margin-top:18px}}
+
+.marquee-track{display:none}
+
+@media(max-width:700px){
+  .marquee-static{display:none}
+  .marquee-track{display:flex;width:max-content;margin:0;animation:marquee-slide 18s linear infinite;will-change:transform}
+  .marquee-segment{display:flex;align-items:center;flex:none;width:max-content;margin:0}
+  .marquee-segment span{flex:none;color:#a9bcaa;font-size:11px;margin:0;vertical-align:baseline}
+  .marquee-segment .marquee-star{color:#b7eb62;font-size:17px;margin:0 32px}
+}
+
+@keyframes marquee-slide{to{transform:translateX(-50%)}}
+
+@media(prefers-reduced-motion:reduce){
+  .marquee-track{animation:none}
+}
