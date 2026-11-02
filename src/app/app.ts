@@ -12,7 +12,7 @@ export class App {
   readonly profile = {
     name: 'Matheus Becker',
     role: 'Engenharia de software · Design gráfico · Conteúdo',
-    intro: 'Sou Matheus Becker. Uno desenvolvimento, design e conteúdo para transformar ideias em experiências digitais.',
+    intro: 'Sou Matheus Becker. Combino desenvolvimento, design e criação de conteúdo para transformar ideias em experiências digitais.',
     about: 'Minha trajetória começou aos 17 anos, como estagiário no Riomaframix. Eu publicava materiais de clientes e, após ser efetivado, passei a criar peças e captar vídeos. Foi nesse período que desenvolvi minhas habilidades com Photoshop, CapCut e OBS Studio.',
     journey: 'Depois, assumi o marketing da Odonto Company e também realizei projetos como freelancer. O interesse por entender como as coisas funcionam me levou à Engenharia de Software, curso que faço atualmente. Hoje reúno essa experiência criativa e técnica no desenvolvimento de sites e aplicativos, incluindo OdontoGest e NaValidade.',
     location: 'Rio Negro, Paraná',
