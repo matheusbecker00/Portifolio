@@ -32,7 +32,21 @@
     </div></section>
     <section class="design-section" id="design" aria-labelledby="design-title">
       <div class="section-wrap section-block">
-        <div class="section-heading"><div><p class="eyebrow">02 / Explorações visuais</p><h2 id="design-title">Design que <em>comunica.</em></h2></div><p>Uma seleção de peças que criei para marcas e redes sociais, explorando linguagem visual, composição e comunicação.</p></div>
+        <div class="section-heading"><div><p class="eyebrow">02 / Explorações visuais</p><h2 id="design-title">Design que <em>comunica.</em></h2></div><p>Identidade visual e peças para marcas e redes sociais, explorando linguagem visual, composição e comunicação.</p></div>
+        <article class="branding-case" aria-labelledby="branding-title">
+          <div class="branding-case-copy">
+            <p class="branding-case-label">{{ branding.category }}</p>
+            <h3 id="branding-title">{{ branding.title }}</h3>
+            <p class="branding-case-description">{{ branding.description }}</p>
+            <ul class="branding-case-elements">
+              @for (element of branding.elements; track element) { <li>{{ element }}</li> }
+            </ul>
+            <a class="branding-case-link" [href]="branding.image" target="_blank" rel="noopener noreferrer">Ver cartão completo <span aria-hidden="true">↗</span></a>
+          </div>
+          <a class="branding-case-visual" [href]="branding.image" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'Ver cartão de visita da ' + branding.title + ' em tamanho completo'">
+            <img [src]="branding.image" [alt]="branding.imageAlt" loading="lazy" />
+          </a>
+        </article>
         <div class="art-grid">
           @for (art of artworks; track art.number) {
             <article class="art-card" [class.art-featured]="art.number === '01'">

@@ -55,6 +55,15 @@ export class App {
     { number: '04', title: 'Dental Protection', format: 'Peça para redes sociais', image: 'artes/dental-protection.png' },
   ];
 
+  readonly branding = {
+    title: 'Team Gadelle',
+    category: 'Identidade visual / Personal trainer',
+    description: 'Uma marca criada para transmitir força e determinação. Desenvolvi a logo, os grafismos inspirados em pesos e a aplicação no cartão de visita, combinando azul profundo e tipografia marcante.',
+    image: 'artes/team-gadelle-cartao.webp',
+    imageAlt: 'Cartão de visita Team Gadelle com logo de atleta, grafismos de pesos e identidade visual azul',
+    elements: ['Logo autoral', 'Sistema gráfico', 'Cartão de visita'],
+  };
+
   readonly contentSkills = [
     { number: '01', title: 'Conceito & narrativa', text: 'Transformar uma ideia em mensagem clara, com voz e propósito.' },
     { number: '02', title: 'Planejamento editorial', text: 'Organizar temas, formatos e ritmo para uma comunicação consistente.' },
